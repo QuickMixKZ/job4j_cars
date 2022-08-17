@@ -19,3 +19,20 @@ CREATE TABLE IF NOT EXISTS history_owner(
     driver_id INT NOT NULL REFERENCES driver(id),
     car_id INT NOT NULL REFERENCES car(id)
 );
+
+CREATE TABLE IF NOT EXISTS account (
+    id SERIAL PRIMARY KEY,
+    login TEXT UNIQUE,
+    name TEXT,
+    password TEXT
+);
+
+create table advert (
+    id SERIAL PRIMARY KEY ,
+    bodyType TEXT,
+    brand TEXT,
+    description TEXT,
+    photo bytea,
+    sold BOOLEAN not null,
+    author_id INT NOT NULL REFERENCES account(id)
+);
