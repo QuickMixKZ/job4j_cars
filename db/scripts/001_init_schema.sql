@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS history_owner(
 
 CREATE TABLE IF NOT EXISTS account (
     id SERIAL PRIMARY KEY,
-    login TEXT,
+    login TEXT UNIQUE,
     name TEXT,
     password TEXT
 );
