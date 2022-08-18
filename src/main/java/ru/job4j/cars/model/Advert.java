@@ -1,6 +1,7 @@
 package ru.job4j.cars.model;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "advert")
@@ -12,6 +13,7 @@ public class Advert {
     private String description;
     private byte[] photo;
     private boolean sold;
+    private LocalDateTime created;
 
     @ManyToOne(cascade = {CascadeType.DETACH,
             CascadeType.MERGE,
