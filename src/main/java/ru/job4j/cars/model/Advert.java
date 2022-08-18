@@ -12,13 +12,18 @@ public class Advert {
     private String description;
     private byte[] photo;
     private boolean sold;
-    private String brand;
-    private String bodyType;
+
+    @ManyToOne(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH})
+    @JoinColumn(name = "car_id")
+    private Car car;
     @ManyToOne(cascade = {CascadeType.DETACH,
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
     @JoinColumn(name = "author_id")
-    private Account author;
+    private Person author;
 
 }

@@ -22,7 +22,17 @@ public class Car {
             @JoinColumn(name = "driver_id", nullable = false, updatable = false)},
             inverseJoinColumns = {
                     @JoinColumn(name = "car_id", nullable = false, updatable = false)})
-    private Set<Driver> drivers = new HashSet<>();
+    private Set<Person> drivers = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "body_type_id")
+    private CarBodyType bodyType;
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private CarBrand brand;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private Set<Advert> adverts = new HashSet<>();
 
     public Car() {
     }

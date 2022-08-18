@@ -18,10 +18,12 @@
         <property name="use_sql_comments">true</property>
         <property name="hibernate.jdbc.time_zone">UTC+05</property>
 
-        <mapping class="ru.job4j.cars.model.Engine" />
-        <mapping class="ru.job4j.cars.model.Car" />
-        <mapping class="ru.job4j.cars.model.Driver" />
         <mapping class="ru.job4j.cars.model.Advert" />
-        <mapping class="ru.job4j.cars.model.Account" />
+        <mapping class="ru.job4j.cars.model.Car" />
+        <mapping class="ru.job4j.cars.model.CarBodyType" />
+        <mapping class="ru.job4j.cars.model.CarBrand" />
+        <mapping class="ru.job4j.cars.model.Engine" />
+        <mapping class="ru.job4j.cars.model.Person" />
+
     </session-factory>
 </hibernate-configuration>
